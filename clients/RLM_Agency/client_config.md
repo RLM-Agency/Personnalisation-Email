@@ -52,10 +52,3 @@
 ### Remarques du client sur les mails :
 > Pas de remarque
 
----
-
-## Historique des campagnes
-
-| Campagne | Fichier CSV | Date | Nb leads | Taux réponse |
-|----------|------------|------|----------|--------------|
-|          |            |      |          |              |

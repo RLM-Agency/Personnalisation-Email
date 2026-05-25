@@ -1,0 +1,20 @@
+# Clés API et données sensibles
+.env
+*.env
+**/.env
+
+# Fichiers CSV (données personnelles des leads - ne pas mettre sur GitHub)
+*.csv
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dossiers temporaires
+temp/
+tmp/
+output/
+
+# Logs
+*.log

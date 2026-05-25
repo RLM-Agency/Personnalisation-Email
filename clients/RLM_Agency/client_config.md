@@ -1,4 +1,4 @@
-# Fiche Client — [NOM DU CLIENT]
+# Fiche Client — RLM Agency
 
 > Copier ce dossier pour chaque nouveau client et remplir les informations ci-dessous.
 
@@ -6,10 +6,10 @@
 
 ## Informations générales
 
-- **Nom de l'entreprise** : 
-- **Secteur d'activité** : 
-- **Site web** : 
-- **Contact principal** : 
+- **Nom de l'entreprise** : RLM Agency
+- **Secteur d'activité** : Agence de cold email B2B 
+- **Site web** : Pas de site web
+- **Contact principal** : Pas de contact
 - **Clé API Instantly** : *(stocker dans le fichier `.env` à la racine du dossier client)*
 
 ---

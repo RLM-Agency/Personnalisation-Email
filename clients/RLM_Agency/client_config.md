@@ -54,18 +54,6 @@
 
 ---
 
-## Colonnes disponibles dans les CSV Apollo
-
-*(Lister les colonnes présentes dans les fichiers CSV de ce client)*
-- `first_name`
-- `last_name`
-- `company`
-- `title`
-- `email`
-- *(ajouter les autres colonnes ici)*
-
----
-
 ## Historique des campagnes
 
 | Campagne | Fichier CSV | Date | Nb leads | Taux réponse |

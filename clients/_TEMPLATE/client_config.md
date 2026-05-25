@@ -9,8 +9,6 @@
 - **Nom de l'entreprise** : 
 - **Secteur d'activité** : 
 - **Site web** : 
-- **Contact principal** : 
-- **Clé API Instantly** : *(stocker dans le fichier `.env` à la racine du dossier client)*
 
 ---
 

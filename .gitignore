@@ -3,9 +3,6 @@
 *.env
 **/.env
 
-# Fichiers CSV (données personnelles des leads - ne pas mettre sur GitHub)
-*.csv
-
 # Fichiers système
 .DS_Store
 Thumbs.db

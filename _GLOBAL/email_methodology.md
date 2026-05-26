@@ -162,10 +162,39 @@ Avant toute chose, vérifie que le fichier `.env` à la racine du projet existe 
 
 Une fois la clé API confirmée :
 
-1. Utilise l'**Instantly CLI** pour créer la campagne
-2. **Nomme la campagne** avec le même nom que le fichier final (`[NomClient] - [Mois Année]`)
-3. Charge les leads dans la campagne
-4. Charge les séquences d'emails générées
-5. **Montre un aperçu complet** avant tout lancement
+1. Crée la campagne via `POST /api/v2/campaigns` avec le nom `[NomClient] - [Mois Année]`
+2. Configure la séquence d'emails (3 étapes : Email 1 immédiat, Email 2 J+3, Email 3 J+7)
+3. Importe les leads via `POST /api/v2/leads/add` avec le mapping ci-dessous
+4. **Montre un aperçu complet** avant tout lancement
 
 > ⚠️ **NE JAMAIS lancer la campagne.** Le lancement se fait toujours manuellement par l'utilisateur.
+
+---
+
+### Mapping des champs CSV → Instantly
+
+À chaque import, analyse les colonnes du CSV et applique la correspondance suivante de manière **sémantique** (le nom exact de la colonne peut varier d'un fichier à l'autre) :
+
+| Colonne CSV (ou équivalent) | Champ Instantly |
+|---|---|
+| First Name | `first_name` |
+| Last Name | `last_name` |
+| Title / Job Title / Poste | `job_title` (custom variable) |
+| Company Name | `company_name` (custom variable) |
+| Email | `email` *(obligatoire)* |
+| Person Linkedin Url / LinkedIn | `linkedin` (custom variable) |
+| Website | `website` (custom variable) |
+| Company Address / Adresse entreprise | `location` (custom variable) |
+| Company City / Ville entreprise | `company_city` (custom variable) |
+| Company State / Région entreprise | `company_state` (custom variable) |
+| Company Country / Pays entreprise | `company_country` (custom variable) |
+| Toutes les autres colonnes | **Ignorées** |
+
+**Règles d'interprétation :**
+- Si le CSV contient plusieurs colonnes d'adresse (ex. adresse du lead ET adresse de l'entreprise), toujours privilégier l'**adresse de l'entreprise**
+- La correspondance est sémantique : `Person Linkedin Url`, `linkedin_url`, `LinkedIn` → même champ
+- Si une colonne attendue est absente du CSV, **ne pas bloquer l'import** — continuer avec les champs disponibles
+
+**Après l'import**, si une ou plusieurs variables attendues étaient absentes du CSV, afficher ce message :
+
+> ⚠️ Variables non trouvées dans ce CSV et non importées : `[liste des champs manquants]`

@@ -48,6 +48,122 @@ Pour chaque lead, tu dois trouver :
 
 ---
 
+### Création de la ligne d'objet
+
+> L'objectif est d'optimiser pour les **RÉPONSES**, pas pour les ouvertures. Une ligne d'objet qui génère des ouvertures sans réponses est un échec. Cible : dépasser 10% de taux de réponse.
+
+#### Règle fondamentale
+
+La ligne d'objet doit sonner comme quelque chose qu'un collègue écrirait à un autre collègue dans un email interne.
+
+Elle doit passer deux tests :
+- **Colleague Test** : est-ce qu'un employé pourrait envoyer cet objet à un collègue en interne sans que ça semble bizarre ? Si oui : valide.
+- **So What Test** : un VP occupé peut-il comprendre immédiatement pourquoi il devrait s'en préoccuper ? Si oui : valide.
+
+#### Règles mécaniques obligatoires
+
+**Longueur :**
+- Entre 2 et 6 mots (idéal)
+- Entre 36 et 50 caractères idéalement
+- Minimum absolu : 21 caractères / Maximum absolu : 60 caractères
+- Raison : 61% des emails sont ouverts sur mobile. Au-delà de 60 caractères, l'objet est tronqué et le taux de réponse chute de 25% ou plus.
+
+**Capitalisation :**
+- Toujours minuscules ou sentence case (première lettre du premier mot en majuscule, reste en minuscules)
+- Jamais le Title Case (Each Word Capitalized) : signal marketing
+- Jamais les MAJUSCULES : détruit la délivrabilité, augmente les plaintes spam de 50%
+- Modèle mental : écrire comme un SMS à un collègue que l'on respecte
+
+**Ton :**
+- Neutre, direct, humain
+- Zéro jeu de mots, zéro exclamation, zéro emoji
+- Zéro buzzwords ("transform", "revolutionize", "game-changing", "incredible opportunity")
+- Zéro vague ("our new offer", "something exciting")
+
+#### Les 4 frameworks (par ordre de priorité)
+
+**FRAMEWORK 1 — Le Problème Douloureux** *(Priorité MAXIMALE — taux d'ouverture moyen : 82%)*
+
+Nommer exactement la douleur que le prospect ressent en ce moment. Pas la solution, pas l'offre. Juste leur problème, formulé avec précision chirurgicale, comme si on avait assisté à leurs réunions. Les douleurs génériques sont ignorées, les douleurs ultra-spécifiques à leur rôle/secteur/situation sont ouvertes.
+
+Formule : `[Problème spécifique qu'ils vivent au quotidien]`
+Exemples : "not interested" (sales managers), "unverified lead data" (ops managers), "43% of SDRs miss quota"
+
+---
+
+**FRAMEWORK 2 — Le Trigger Event / Référence Directe** *(Priorité HAUTE — boost d'ouverture : +45%, taux de réponse x3)*
+
+Référencer quelque chose de spécifique et récent sur leur entreprise ou activité. Cela transforme un cold email en quelque chose qui ressemble à un email warm. Prendre l'événement et le retourner pour révéler un angle mort ou une conséquence qu'ils n'ont pas encore considérée.
+
+Sources par ordre de priorité : levée de fonds, offre d'emploi active, post LinkedIn récent, lancement de produit, expansion, recrutement massif.
+
+A ne pas faire : "congrats on the funding" (trop évident, ressemble à du spam)
+A faire : "funding concerns" (crée de la curiosité)
+
+Formule : `[Référence à l'événement] + [implication/question implicite]`
+Exemples : "saw you're hiring three SDRs, quick thought", "funding concerns", "your Q3 expansion"
+
+---
+
+**FRAMEWORK 3 — La Stat ou Résultat Chiffré** *(Priorité HAUTE — taux d'ouverture moyen : 66%, boost avec chiffres : +45%)*
+
+Les chiffres attirent l'attention, surtout quand ils sont liés au secteur ou au rôle. Le chiffre doit représenter soit leur plus grande peur, soit leur plus grand désir. Si le chiffre vient de leurs propres données (site web, rapport annuel), l'utiliser : ça prouve que la recherche a été faite.
+
+A ne pas faire : "500% revenue increase" (trop vague, crie au spam)
+A faire : "100% uptime in Q3" (data center managers), "43% of SDRs miss quota" (sales managers)
+
+Formule : `[Chiffre spécifique] + [résultat/contexte lié à leur rôle]`
+Exemples : "47 qualified leads in 30 days", "43% of SDRs miss quota"
+
+---
+
+**FRAMEWORK 4 — La Question Courte** *(Priorité MOYENNE — 4 à 6 mots)*
+
+Le cerveau ne peut pas résister à une question sans réponse. La question doit être pertinente et liée à quelque chose de spécifique à leur situation. Ne jamais écrire juste "quick question" sans contexte.
+
+Formule : `[Question de 4-6 mots liée à leur réalité spécifique]`
+Exemples : "still struggling with deliverability?", "are you scaling outbound this quarter?"
+
+---
+
+#### Processus de sélection du framework
+
+1. Y a-t-il un événement récent identifiable (funding, offre d'emploi, post LinkedIn, lancement) ? Si oui : considérer Framework 2 en priorité.
+2. Y a-t-il un problème douloureux ultra-spécifique identifiable pour ce rôle/secteur ? Si oui : considérer Framework 1 en priorité.
+3. Y a-t-il une stat ou un chiffre pertinent pour leur réalité ? Si oui : considérer Framework 3.
+4. Sinon : Framework 4.
+
+Règle de priorité : **Problème douloureux > Trigger event > Stat pertinente > Question courte**
+
+Après génération, valider chaque point :
+- Entre 2 et 6 mots ?
+- Entre 21 et 60 caractères ?
+- Minuscules ou sentence case uniquement ?
+- Zéro buzzword marketing ?
+- Passe le Colleague Test ?
+- Passe le So What Test ?
+- Centré sur EUX, pas sur l'offre ?
+
+#### Ce qu'il faut absolument éviter
+
+- Tout ce qui ressemble à du marketing : "Transform your business", "Incredible opportunity", "Don't miss out"
+- Tout ce qui est trop vague : "Quick question" (sans contexte), "Following up", "Partnership opportunity"
+- Tout ce qui semble trop vendeur : "500% ROI", "Triple your revenue"
+- Title Case, MAJUSCULES, points d'exclamation, emojis, plus de 60 caractères
+
+#### Format de sortie dans le CSV
+
+Pour chaque lead, ajouter 4 colonnes supplémentaires :
+
+| Colonne | Description |
+|---|---|
+| `subject` | La ligne d'objet générée |
+| `subject_framework` | Le framework utilisé (ex. "Framework 1 - Problème Douloureux") |
+| `subject_word_count` | Nombre de mots |
+| `subject_char_count` | Nombre de caractères |
+
+---
+
 ### Règles absolues (valables pour les 3 emails)
 
 - **Maximum 100 mots** par email

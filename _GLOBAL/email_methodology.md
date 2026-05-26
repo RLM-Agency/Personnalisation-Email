@@ -61,6 +61,10 @@ Pour chaque lead, tu dois trouver :
 - "J'admire votre travail"
 - Toute phrase générique qui pourrait être envoyée à n'importe qui
 
+**Règles typographiques obligatoires :**
+- **Toujours mettre les accents** : à â æ ç é è ê ë î ï ô œ ù û ü ÿ (et leurs majuscules À Â Æ Ç É È Ê Ë Î Ï Ô Œ Ù Û Ü Ÿ). Un email sans accent est un email non professionnel.
+- **Ne jamais utiliser le tiret long "—"** pour séparer des bouts de phrase. Ce signe est caractéristique des textes générés par IA et rend les emails non humains. Utiliser une virgule, un point, ou reformuler la phrase.
+
 ---
 
 ### L'état d'esprit à adopter

@@ -312,9 +312,9 @@ Une fois la clé API confirmée :
 | `email_2` | Custom Variable | `custom_variables.email_2` |
 | `email_3` | Custom Variable | `custom_variables.email_3` |
 | `Objet` | Custom Variable | `custom_variables.Objet` *(utilisé comme sujet de séquence via `{{Objet}}`)* |
-| `Framework` | Do not import | — |
-| `Nombre de mots` | Do not import | — |
-| `Nombre de caractères` | Do not import | — |
+| `Framework` | Custom Variable | `custom_variables.Framework` |
+| `Nombre de mots` | Custom Variable | `custom_variables.Nombre de mots` |
+| `Nombre de caractères` | Custom Variable | `custom_variables.Nombre de caractères` |
 | Toutes les autres colonnes | Do not import | — |
 
 > **Note technique :** L'UI Instantly affiche "LinkedIn" et "Location" comme des options nommées lors d'un import CSV manuel. Via l'API v2, ces champs n'existent pas au niveau natif — ils sont envoyés en `custom_variables` avec les clés `linkedin` et `location`, ce qui produit un résultat identique dans Instantly.

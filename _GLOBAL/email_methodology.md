@@ -134,27 +134,14 @@ Campagnes Client/
 
 Avant toute chose, vérifie que le fichier `.env` à la racine du projet existe et contient une clé API valide (`INSTANTLY_API_KEY`).
 
-**Si le fichier `.env` est absent ou si la clé est manquante**, arrête-toi et affiche ce message à l'utilisateur :
+**Si le fichier `.env` est absent ou si la clé est manquante**, demande simplement à l'utilisateur dans le chat :
 
----
+> J'ai besoin de ta clé API Instantly pour créer la campagne. Tu peux la trouver dans **Settings → API Keys** sur [app.instantly.ai](https://app.instantly.ai). Colle-la ici directement.
 
-> **Clé API Instantly manquante**
->
-> Pour créer la campagne automatiquement, j'ai besoin de ta clé API Instantly.
->
-> **Comment la trouver :**
-> 1. Connecte-toi à ton compte sur [app.instantly.ai](https://app.instantly.ai)
-> 2. Va dans **Settings** (icône engrenage en bas à gauche)
-> 3. Clique sur **API Keys**
-> 4. Copie ta clé (elle commence généralement par `sk_...`)
->
-> **Comment me la donner :**
-> - Crée un fichier nommé `.env` à la racine du dossier `ColdEmail/`
-> - Colle-y ceci en remplaçant par ta vraie clé :
-> ```
-> INSTANTLY_API_KEY=sk_ta_cle_ici
-> ```
-> - Dis-moi quand c'est fait, je reprends automatiquement à cette étape.
+Une fois la clé reçue, crée le fichier `.env` à la racine du projet avec le contenu suivant, puis continue :
+```
+INSTANTLY_API_KEY=la_cle_recue
+```
 
 ---
 

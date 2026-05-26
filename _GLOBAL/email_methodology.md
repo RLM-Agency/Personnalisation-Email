@@ -153,14 +153,14 @@ Après génération, valider chaque point :
 
 #### Format de sortie dans le CSV
 
-Pour chaque lead, ajouter 4 colonnes supplémentaires :
+Pour chaque lead, ajouter 4 colonnes supplémentaires avec exactement ces noms :
 
 | Colonne | Description |
 |---|---|
-| `subject` | La ligne d'objet générée |
-| `subject_framework` | Le framework utilisé (ex. "Framework 1 - Problème Douloureux") |
-| `subject_word_count` | Nombre de mots |
-| `subject_char_count` | Nombre de caractères |
+| `Objet` | La ligne d'objet générée |
+| `Framework` | Le framework utilisé (ex. "Framework 1 - Problème Douloureux") |
+| `Nombre de mots` | Nombre de mots de l'objet |
+| `Nombre de caractères` | Nombre de caractères de l'objet |
 
 ---
 
@@ -234,11 +234,18 @@ On veut aller de **cold à warm** — piquer suffisamment la curiosité pour que
 Une fois le feu vert donné :
 
 1. Traite l'ensemble des leads du CSV
-2. **Ajoute les données enrichies directement dans le CSV source** avec les colonnes suivantes :
-   - `signal` : le signal découvert pendant la recherche
-   - `email_1` : Email de premier contact
-   - `email_2` : Relance J+3
-   - `email_3` : Relance J+7
+2. **Ajoute les données enrichies directement dans le CSV source** avec exactement ces noms de colonnes :
+
+| Colonne | Description |
+|---|---|
+| `signal` | Le signal découvert pendant la recherche |
+| `email_1` | Email de premier contact |
+| `email_2` | Relance J+3 |
+| `email_3` | Relance J+7 |
+| `Objet` | La ligne d'objet générée |
+| `Framework` | Le framework utilisé |
+| `Nombre de mots` | Nombre de mots de l'objet |
+| `Nombre de caractères` | Nombre de caractères de l'objet |
 
 3. **Classe le fichier final** dans la structure suivante :
 ```
@@ -296,6 +303,14 @@ Une fois la clé API confirmée :
 | Company City / Ville entreprise | Custom Variable | `custom_variables.company_city` |
 | Company State / Région entreprise | Custom Variable | `custom_variables.company_state` |
 | Company Country / Pays entreprise | Custom Variable | `custom_variables.company_country` |
+| `signal` | Custom Variable | `custom_variables.signal` |
+| `email_1` | Custom Variable | `custom_variables.email_1` |
+| `email_2` | Custom Variable | `custom_variables.email_2` |
+| `email_3` | Custom Variable | `custom_variables.email_3` |
+| `Objet` | Custom Variable | `custom_variables.Objet` *(utilisé comme sujet de séquence via `{{Objet}}`)* |
+| `Framework` | Do not import | — |
+| `Nombre de mots` | Do not import | — |
+| `Nombre de caractères` | Do not import | — |
 | Toutes les autres colonnes | Do not import | — |
 
 > **Note technique :** L'UI Instantly affiche "LinkedIn" et "Location" comme des options nommées lors d'un import CSV manuel. Via l'API v2, ces champs n'existent pas au niveau natif — ils sont envoyés en `custom_variables` avec les clés `linkedin` et `location`, ce qui produit un résultat identique dans Instantly.

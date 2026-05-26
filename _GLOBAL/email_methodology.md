@@ -319,6 +319,8 @@ Une fois la clé API confirmée :
 
 > **Note technique :** L'UI Instantly affiche "LinkedIn" et "Location" comme des options nommées lors d'un import CSV manuel. Via l'API v2, ces champs n'existent pas au niveau natif — ils sont envoyés en `custom_variables` avec les clés `linkedin` et `location`, ce qui produit un résultat identique dans Instantly.
 
+> **Ordre des champs obligatoire :** L'ordre des colonnes dans Instantly reflète l'ordre des clés dans le JSON envoyé à l'API. Pour garantir que les colonnes apparaissent dans l'ordre du tableau ci-dessus, utiliser impérativement un objet ordonné lors de la construction du JSON (ex. `[ordered]@{}` en PowerShell). Un hashtable non ordonné (`@{}`) réorganise les clés de façon imprévisible.
+
 **Règles d'interprétation :**
 - Si le CSV contient plusieurs colonnes d'adresse (ex. adresse du lead ET adresse de l'entreprise), toujours privilégier l'**adresse de l'entreprise**
 - La correspondance est sémantique : `Person Linkedin Url`, `linkedin_url`, `LinkedIn` → même champ

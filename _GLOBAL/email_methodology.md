@@ -175,20 +175,22 @@ Une fois la clé API confirmée :
 
 À chaque import, analyse les colonnes du CSV et applique la correspondance suivante de manière **sémantique** (le nom exact de la colonne peut varier d'un fichier à l'autre) :
 
-| Colonne CSV (ou équivalent) | Champ Instantly |
-|---|---|
-| First Name | `first_name` |
-| Last Name | `last_name` |
-| Title / Job Title / Poste | `job_title` (custom variable) |
-| Company Name | `company_name` (custom variable) |
-| Email | `email` *(obligatoire)* |
-| Person Linkedin Url / LinkedIn | `linkedin` (custom variable) |
-| Website | `website` (custom variable) |
-| Company Address / Adresse entreprise | `location` (custom variable) |
-| Company City / Ville entreprise | `company_city` (custom variable) |
-| Company State / Région entreprise | `company_state` (custom variable) |
-| Company Country / Pays entreprise | `company_country` (custom variable) |
-| Toutes les autres colonnes | **Ignorées** |
+| Colonne CSV (ou équivalent) | Champ Instantly | Via API |
+|---|---|---|
+| First Name | First Name | `first_name` *(natif)* |
+| Last Name | Last Name | `last_name` *(natif)* |
+| Title / Job Title / Poste | Job Title | `job_title` *(natif)* |
+| Company Name | Company Name | `company_name` *(natif)* |
+| Email | Email | `email` *(natif, obligatoire)* |
+| Website | Website | `website` *(natif)* |
+| Person Linkedin Url / LinkedIn | LinkedIn | `custom_variables.linkedin` |
+| Company Address / Adresse entreprise | Location | `custom_variables.location` |
+| Company City / Ville entreprise | Custom Variable | `custom_variables.company_city` |
+| Company State / Région entreprise | Custom Variable | `custom_variables.company_state` |
+| Company Country / Pays entreprise | Custom Variable | `custom_variables.company_country` |
+| Toutes les autres colonnes | Do not import | — |
+
+> **Note technique :** L'UI Instantly affiche "LinkedIn" et "Location" comme des options nommées lors d'un import CSV manuel. Via l'API v2, ces champs n'existent pas au niveau natif — ils sont envoyés en `custom_variables` avec les clés `linkedin` et `location`, ce qui produit un résultat identique dans Instantly.
 
 **Règles d'interprétation :**
 - Si le CSV contient plusieurs colonnes d'adresse (ex. adresse du lead ET adresse de l'entreprise), toujours privilégier l'**adresse de l'entreprise**

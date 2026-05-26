@@ -54,6 +54,7 @@ Pour chaque lead, tu dois trouver :
 - **Formaté avec des sauts de ligne** adaptés à la lecture mobile (pas de gros blocs de texte)
 - **Une salutation simple et humaine** (prénom uniquement, jamais "Monsieur/Madame")
 - **La première ligne est la plus importante** — elle doit capturer les 1 à 3 premières secondes d'attention. Elle doit être ultra-spécifique à cette personne, directe, et basée sur un fait concret découvert pendant la recherche
+- **Orthographe irréprochable** : l’orthographe doit être absolument parfaite ! Aucune faute ne peut être tolérée. Un mail contenant des fautes est un mail qui ne sera ni lu ni pris au sérieux.
 
 **Ne JAMAIS écrire :**
 - "J'espère que cet email vous trouve bien"

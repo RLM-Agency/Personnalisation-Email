@@ -278,7 +278,11 @@ INSTANTLY_API_KEY=la_cle_recue
 Une fois la clé API confirmée :
 
 1. Crée la campagne via `POST /api/v2/campaigns` avec le nom `[NomClient] - [Mois Année]`
-2. Configure la séquence d'emails (3 étapes : Email 1 immédiat, Email 2 J+3, Email 3 J+7)
+2. Configure la séquence d'emails (3 étapes) avec les sujets suivants :
+   - Email 1 (immédiat) : sujet = `{{Objet}}`
+   - Email 2 (J+3) : sujet = `Re: {{Objet}}`
+   - Email 3 (J+7) : sujet = `Re: {{Objet}}`
+   > Le `Re:` sur les relances donne l'impression d'une continuation de thread, ce qui augmente les taux d'ouverture. La valeur de `{{Objet}}` est injectée automatiquement depuis la custom variable de chaque lead — aucune colonne supplémentaire n'est nécessaire.
 3. Importe les leads via `POST /api/v2/leads/add` avec le mapping ci-dessous
 4. **Montre un aperçu complet** avant tout lancement
 

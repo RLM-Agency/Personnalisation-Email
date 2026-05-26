@@ -69,7 +69,7 @@ Elle doit passer deux tests :
 - Raison : 61% des emails sont ouverts sur mobile. Au-delà de 60 caractères, l'objet est tronqué et le taux de réponse chute de 25% ou plus.
 
 **Capitalisation :**
-- Toujours minuscules ou sentence case (première lettre du premier mot en majuscule, reste en minuscules)
+- Toujours minuscules ou sentence case (toujours première lettre du premier mot en majuscule, reste en minuscules)
 - Jamais le Title Case (Each Word Capitalized) : signal marketing
 - Jamais les MAJUSCULES : détruit la délivrabilité, augmente les plaintes spam de 50%
 - Modèle mental : écrire comme un SMS à un collègue que l'on respecte
@@ -158,7 +158,7 @@ Pour chaque lead, ajouter 4 colonnes supplémentaires avec exactement ces noms :
 | Colonne | Description |
 |---|---|
 | `Objet` | La ligne d'objet générée |
-| `Framework` | Le framework utilisé (ex. "Framework 1 - Problème Douloureux") |
+| `Framework` | Le framework utilisé (ex. "Framework 1 - Problème Douloureux". Toujours utiliser l'exact nom du framework) |
 | `Nombre de mots` | Nombre de mots de l'objet |
 | `Nombre de caractères` | Nombre de caractères de l'objet |
 
